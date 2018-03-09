@@ -25,4 +25,4 @@ def extract_text(paragraphs):
 def extract_text_from_path(path):
     return extract_text(extract_paragraphs(extract_xml_from_word(path)))
 
-#Test
+#Test after updating repository url
