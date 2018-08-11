@@ -18,21 +18,20 @@ class TestOpenAndReadDocument(unittest.TestCase):
         self.paragraphs = wdr.extract_paragraphs(self.xml)
         self.text = wdr.extract_text(self.paragraphs)
         self.assertEqual(['This is a normal paragraph',
-                          'This is a bold paragraph',
-                          'This is an italicized paragraph',
-                          'This is an underlined paragraph',
-                          'This is a bold, italicized, and underlined paragraph',
-                          'The paragraph below is a blank paragraph',
-                          '',
-                          'The paragraph below is a paragraph with just a space',
-                          ' ',
-                          'The paragraph below is a pagebreak',
-                          '', 'The paragraph below is a tab',
-                          '',
-                          'This word is bolded here', 'This word is italicized here',
-                          'This word is underlined here',
-                          'This word is bolded, italicized, and underlined here'
-                          ], self.text)
+                        'This is a bold paragraph',
+                        'This is an italicized paragraph',
+                        'This is an underlined paragraph',
+                        'This is a bold, italicized, and underlined paragraph',
+                        'The paragraph below is a blank paragraph',
+                        'The paragraph below is a paragraph with just a space',
+                        ' ',
+                        'The paragraph below is a pagebreak',
+                        '\n',
+                        'The paragraph below is a tab',
+                        'This word is bolded here', 'This word is italicized here',
+                        'This word is underlined here',
+                        'This word is bolded, italicized, and underlined here'
+                        ], self.text)
         self.text2 = wdr.extract_text_from_path(self.docx_path)
         self.assertEqual(self.text, self.text2)
 
